@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="650.0" prefWidth="400.0" style="-fx-background-color: #3E424C;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.chatApplication.controller.ClientController">
+   <children>
+      <ImageView fx:id="btnSend" fitHeight="22.0" fitWidth="25.0" layoutX="368.0" layoutY="609.0" onMouseClicked="#mouseClickOnAction" onMouseEntered="#mouseEnterAnim" onMouseExited="#mouseExitAnim" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="368.0" AnchorPane.topAnchor="609.0">
+         <image>
+            <Image url="@../assests/icons8-send-96%20(1).png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="txtMessage" layoutX="29.0" layoutY="602.0" onAction="#txtMessageOnAction" prefHeight="34.0" prefWidth="331.0" style="-fx-background-radius: 8; -fx-background-color: #575D6B; -fx-text-fill: white;" AnchorPane.leftAnchor="29.0" AnchorPane.topAnchor="602.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <padding>
+            <Insets left="20.0" />
+         </padding>
+         <effect>
+            <DropShadow>
+               <color>
+                  <Color opacity="0.1988527774810791" />
+               </color>
+            </DropShadow>
+         </effect>
+      </TextField>
+      <ImageView fitHeight="25.0" fitWidth="20.0" layoutX="323.0" layoutY="608.0" onMouseClicked="#btnfileOnAction" onMouseEntered="#mouseEnterAnim" onMouseExited="#mouseExitAnim" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assests/icons8-file-104%20(2).png" />
+         </image>
+      </ImageView>
+      <Pane layoutX="3.0" layoutY="2.0" prefHeight="64.0" prefWidth="400.0" style="-fx-background-color: #3E424C;" AnchorPane.bottomAnchor="586.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label fx:id="lblClientName" layoutX="67.0" layoutY="18.0" prefHeight="25.0" prefWidth="115.0" text="Lahiru" textFill="WHITE">
+               <font>
+                  <Font name="Symbol" size="18.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="23.0" fitWidth="39.0" layoutX="351.0" layoutY="18.0" onMouseEntered="#mouseEnterAnim" onMouseExited="#mouseExitAnim" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assests/icons8-menu-vertical-96.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="25.0" fitWidth="40.0" layoutX="258.0" layoutY="18.0" onMouseEntered="#mouseEnterAnim" onMouseExited="#mouseExitAnim" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assests/icons8-video-call-100%20(1).png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="25.0" fitWidth="40.0" layoutX="310.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assests/Phone_light@3x.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="28.0" fitWidth="75.0" layoutX="16.0" layoutY="18.0" onMouseEntered="#mouseEnterAnim" onMouseExited="#mouseExitAnim" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assests/icons8-back-arrow-100.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <ScrollPane layoutY="64.0" prefHeight="490.0" prefWidth="400.0">
+         <content>
+            <VBox fx:id="msgVboxAp" prefHeight="491.0" prefWidth="384.0" style="-fx-background-color: white;" />
+         </content>
+      </ScrollPane>
+      <Label fx:id="lblimg1" layoutX="25.0" layoutY="559.0" onMouseClicked="#imoji1OnAction" onMouseEntered="#mouseEnterAnim" onMouseExited="#mouseExitAnim" prefHeight="35.0" prefWidth="35.0" text="Label" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font></Label>
+      <Label fx:id="lblimg2" layoutX="79.0" layoutY="559.0" onMouseClicked="#imoji2OnAction" onMouseEntered="#mouseEnterAnim" onMouseExited="#mouseExitAnim" prefHeight="35.0" prefWidth="35.0" text="Label" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font></Label>
+      <Label fx:id="lblimg3" layoutX="137.0" layoutY="559.0" onMouseClicked="#imoji3OnAction" onMouseEntered="#mouseEnterAnim" onMouseExited="#mouseExitAnim" prefHeight="35.0" prefWidth="35.0" text="Label" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font></Label>
+      <Label fx:id="lblimg4" layoutX="205.0" layoutY="559.0" onMouseClicked="#imoji4OnAction" onMouseEntered="#mouseEnterAnim" onMouseExited="#mouseExitAnim" prefHeight="35.0" prefWidth="35.0" text="Label" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font></Label>
+      <Label fx:id="lblimg5" layoutX="263.0" layoutY="559.0" onMouseClicked="#imoji5OnAction" onMouseEntered="#mouseEnterAnim" onMouseExited="#mouseExitAnim" prefHeight="35.0" prefWidth="35.0" text="Label" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font></Label>
+      <Label fx:id="lblimg6" layoutX="330.0" layoutY="559.0" onMouseClicked="#imoji6OnAction" onMouseEntered="#mouseEnterAnim" onMouseExited="#mouseExitAnim" prefHeight="35.0" prefWidth="35.0" text="Label" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font></Label>
+   </children>
+</AnchorPane>
