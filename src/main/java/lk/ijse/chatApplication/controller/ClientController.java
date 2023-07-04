@@ -14,6 +14,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
@@ -393,6 +394,10 @@ public class ClientController implements Initializable {
 
     public void txtMessageOnAction() {
         mouseClickOnAction();
+    }
+
+    public void btnfileOnAction() {
+
     }
 
 
