@@ -298,4 +298,15 @@ public class ClientController implements Initializable {
         }).start();
     }
 
+    private void setImoji() {
+        //https://apps.timwhitlock.info/emoji/tables/unicode#emoji-modal
+//        String emoji = new String(emojiByteCode, Charset.forName("UTF-8"));
+        lblimg1.setText(img1);
+        lblimg2.setText(img2);
+        lblimg3.setText(img3);
+        lblimg4.setText(img4);
+        lblimg5.setText(img5);
+        lblimg6.setText(img6);
+    }
+
 }
