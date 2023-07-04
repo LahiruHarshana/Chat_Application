@@ -14,6 +14,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import java.io.DataInputStream;
@@ -368,6 +369,10 @@ public class ClientController implements Initializable {
             icon.setEffect(null);
         }
     }
+
+    public void mouseClickOnAction() {
+    }
+
 
 
 }
