@@ -56,6 +56,13 @@ public class ChatServer {
         }
     }
     private static void sentMessage(Socket socket,String incomingMessage) throws IOException {
-
+        try {
+                outputStream = new DataOutputStream(socket.getOutputStream());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            outputStream.writeUTF(incomingMessage);
+            outputStream.flush();
+        }
     }
 }
