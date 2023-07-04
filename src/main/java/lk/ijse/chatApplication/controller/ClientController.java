@@ -391,6 +391,10 @@ public class ClientController implements Initializable {
         txtMessage.clear();
     }
 
+    public void txtMessageOnAction() {
+        mouseClickOnAction();
+    }
+
 
 
 }
