@@ -40,12 +40,12 @@ public class HomeFormController implements Initializable {
             return;
         }
 
-            if (txtjon.getText().equals("") || txtjon.getText().equals("please enter your name !")){
-        txtjon.setStyle("-fx-border-color: red");
-        txtjon.setText("please enter your name !");
-        txtjon.selectAll();
-        return;
-    }
+        if (txtjon.getText().equals("") || txtjon.getText().equals("please enter your name !")) {
+            txtjon.setStyle("-fx-border-color: red");
+            txtjon.setText("please enter your name !");
+            txtjon.selectAll();
+            return;
+        }
         Stage stage = new Stage();
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/client_form.fxml"));
         stage.getIcons().add(new Image("/assets/send3D.png"));
@@ -54,4 +54,11 @@ public class HomeFormController implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        stage.setResizable(false);
+        stage.setTitle(HomeFormController.name + " in your chat");
+        stage.show();
+        stage.centerOnScreen();
+        txtjon.clear();
+
+    }
 }
