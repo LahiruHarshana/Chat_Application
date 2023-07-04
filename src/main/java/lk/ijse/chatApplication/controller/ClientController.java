@@ -435,6 +435,12 @@ public class ClientController implements Initializable {
         }
     }
 
+    public void imoji1OnAction() throws IOException {
+        String imoji = clientName + " imoji" + " imoji01";
+        outputStream.writeUTF(imoji);
+        outputStream.flush();
+    }
+
 
 
 }
