@@ -2,8 +2,8 @@ package lk.ijse.chatApplication.controller;
 
 import javafx.animation.ScaleTransition;
 import javafx.application.Platform;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
@@ -18,18 +18,13 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 import java.net.Socket;
-import java.net.URL;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.ResourceBundle;
 
-public class ClientController implements Initializable {
+public class ClientController {
     @FXML
     private Label lblClientName;
     @FXML
@@ -74,19 +69,18 @@ public class ClientController implements Initializable {
     private final String img5 = new String(emojiByteCode4, Charset.forName("UTF-8"));
     private final String img6 = new String(emojiByteCode5, Charset.forName("UTF-8"));
 
-
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
+    @FXML
+    void initialize(){
         setImoji();
         lblClientName.setText(HomeFormController.name);
         clientName = lblClientName.getText();
-        fileList = new ArrayList<>();
+        fileList=new ArrayList<>();
         fileList.add("*.jpg");
         fileList.add("*.doc");
         fileList.add("*.png");
         fileList.add("*.pdf");
 
-        new Thread(() -> {
+        new Thread(()->{
             try (Socket socket = new Socket("localhost",3031);){
 
                 inputStream = new DataInputStream(socket.getInputStream());
@@ -299,8 +293,6 @@ public class ClientController implements Initializable {
             } catch (IOException e) {
                 System.out.println("disconnected !");
             }
-
-
         }).start();
     }
 
@@ -349,8 +341,8 @@ public class ClientController implements Initializable {
             glow.setRadius(15);
             icon.setEffect(glow);
         }
-
     }
+
     public void mouseExitAnim(MouseEvent event) {
         if (event.getSource() instanceof ImageView) {
             ImageView icon = (ImageView) event.getSource();
@@ -398,39 +390,40 @@ public class ClientController implements Initializable {
 
     public void btnfileOnAction() {
 
-            Label label = new Label();
-            label.setBackground(new Background(new BackgroundFill(Color.SILVER, CornerRadii.EMPTY, Insets.EMPTY)));
-            label.setBorder(new Border(new BorderStroke(Color.ALICEBLUE, BorderStrokeStyle.SOLID, null, new BorderWidths(1))));
-            label.setStyle("-fx-font-size: 20");
-            label.setText("Me :");
-            try {
-                FileChooser fileChooser = new FileChooser();
-                fileChooser.setTitle("Select Image File");
-                fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Image Files", "*.png", "*.jpg", "*.gif"));
-                File selectedFile = fileChooser.showOpenDialog(null);
-                File file;
-                try {
-                    file = new File(selectedFile.getPath());
-                    Image image = new Image(file.toURI().toString());
-                    ImageView imageView = new ImageView(image);
-                    imageView.setFitWidth(150);
-                    imageView.setFitHeight(150);
-                    HBox hBox = new HBox(12);
-                    hBox.setAlignment(Pos.BOTTOM_RIGHT);
-                    msgVboxAp.setAlignment(Pos.BOTTOM_LEFT);
-                    hBox.setAlignment(Pos.CENTER_RIGHT);
-                    hBox.getChildren().add(imageView);
-                    hBox.getChildren().add(label);
-                    Platform.runLater(() -> msgVboxAp.getChildren().addAll(hBox));
-                } catch (Exception ignored) {
 
-                }
-                outputStream.writeUTF(clientName+" img " + selectedFile.getPath());
-                outputStream.flush();
-            } catch (IOException ignored) {
+        Label label = new Label();
+        label.setBackground(new Background(new BackgroundFill(Color.SILVER, CornerRadii.EMPTY, Insets.EMPTY)));
+        label.setBorder(new Border(new BorderStroke(Color.ALICEBLUE, BorderStrokeStyle.SOLID, null, new BorderWidths(1))));
+        label.setStyle("-fx-font-size: 20");
+        label.setText("Me :");
+        try {
+            FileChooser fileChooser = new FileChooser();
+            fileChooser.setTitle("Select Image File");
+            fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Image Files", "*.png", "*.jpg", "*.gif"));
+            File selectedFile = fileChooser.showOpenDialog(null);
+            File file;
+            try {
+                file = new File(selectedFile.getPath());
+                Image image = new Image(file.toURI().toString());
+                ImageView imageView = new ImageView(image);
+                imageView.setFitWidth(150);
+                imageView.setFitHeight(150);
+                HBox hBox = new HBox(12);
+                hBox.setAlignment(Pos.BOTTOM_RIGHT);
+                msgVboxAp.setAlignment(Pos.BOTTOM_LEFT);
+                hBox.setAlignment(Pos.CENTER_RIGHT);
+                hBox.getChildren().add(imageView);
+                hBox.getChildren().add(label);
+                Platform.runLater(() -> msgVboxAp.getChildren().addAll(hBox));
+            } catch (Exception ignored) {
 
             }
+            outputStream.writeUTF(clientName+" img " + selectedFile.getPath());
+            outputStream.flush();
+        } catch (IOException ignored) {
+
         }
+    }
 
     public void imoji1OnAction() throws IOException {
         String imoji = clientName + " imoji" + " imoji01";
@@ -475,7 +468,4 @@ public class ClientController implements Initializable {
         Stage stage = (Stage) btnLogOut.getScene().getWindow();
         stage.close();
     }
-
-
-
 }

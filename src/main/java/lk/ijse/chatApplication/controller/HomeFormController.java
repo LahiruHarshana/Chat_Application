@@ -13,6 +13,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import lk.ijse.chatApplication.util.ChatServer;
 
 import java.io.IOException;
 import java.net.URL;
@@ -26,7 +27,9 @@ public class HomeFormController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        new Thread(()->{
+            ChatServer.start();
+        }).start();
     }
 
     public void txtjonOnActon(ActionEvent event) {
@@ -53,7 +56,7 @@ public class HomeFormController implements Initializable {
         }
         Stage stage = new Stage();
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/client_form.fxml"));
-        stage.getIcons().add(new Image("/assets/send3D.png"));
+        stage.getIcons().add(new Image("/assests/icons8-send-message-64.png"));
         try {
             stage.setScene(new Scene(fxmlLoader.load()));
         } catch (IOException e) {

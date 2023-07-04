@@ -9,12 +9,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ChatServer {
-
     private static final List<Socket> socketList = new ArrayList<>();
     static DataOutputStream outputStream = null;
 
     public static void start() {
-        public static void start() {
             Socket clientSocket;
             try (ServerSocket serverSocket = new ServerSocket(3031)){
 
@@ -53,16 +51,15 @@ public class ChatServer {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        }
     }
     private static void sentMessage(Socket socket,String incomingMessage) throws IOException {
         try {
-                outputStream = new DataOutputStream(socket.getOutputStream());
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            outputStream.writeUTF(incomingMessage);
-            outputStream.flush();
+            outputStream = new DataOutputStream(socket.getOutputStream());
+        } catch (IOException e) {
+            e.printStackTrace();
         }
+        outputStream.writeUTF(incomingMessage);
+        outputStream.flush();
     }
+
 }
