@@ -397,8 +397,6 @@ public class ClientController implements Initializable {
     }
 
     public void btnfileOnAction() {
-        public void btnfileOnAction() {
-
 
             Label label = new Label();
             label.setBackground(new Background(new BackgroundFill(Color.SILVER, CornerRadii.EMPTY, Insets.EMPTY)));
@@ -433,7 +431,6 @@ public class ClientController implements Initializable {
 
             }
         }
-    }
 
     public void imoji1OnAction() throws IOException {
         String imoji = clientName + " imoji" + " imoji01";

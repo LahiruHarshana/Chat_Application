@@ -11,7 +11,7 @@
    <children>
       <ImageView fitHeight="400.0" fitWidth="300.0" layoutX="58.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../../../Downloads/marvin-meyer-SYTO3xs06fU-unsplash%201.png" />
+            <Image url="@../assests/marvin-meyer-SYTO3xs06fU-unsplash%201.png" />
          </image>
       </ImageView>
       <TextField fx:id="txtjon" layoutX="67.0" layoutY="144.0" onAction="#txtjonOnActon" prefHeight="34.0" prefWidth="283.0" style="-fx-background-radius: 0; -fx-border-width: 1 1 1 1; -fx-border-color: white; -fx-background-color: kk; -fx-border-radius: 8; -fx-text-fill: white;">
