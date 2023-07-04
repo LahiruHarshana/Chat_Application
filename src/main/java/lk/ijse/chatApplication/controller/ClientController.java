@@ -1,14 +1,22 @@
 package lk.ijse.chatApplication.controller;
 
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
+import java.io.File;
+import java.io.IOException;
+import java.net.Socket;
 import java.net.URL;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
@@ -66,10 +74,14 @@ public class ClientController implements Initializable {
         setImoji();
         lblClientName.setText(HomeFormController.name);
         clientName = lblClientName.getText();
-        fileList=new ArrayList<>();
+        fileList = new ArrayList<>();
         fileList.add("*.jpg");
         fileList.add("*.doc");
         fileList.add("*.png");
         fileList.add("*.pdf");
+        new Thread(() -> {
+
+        }).start();
     }
+
 }
