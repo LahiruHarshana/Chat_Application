@@ -1,5 +1,6 @@
 package lk.ijse.chatApplication.controller;
 
+import javafx.animation.ScaleTransition;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -7,10 +8,13 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
+import javafx.util.Duration;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -308,5 +312,9 @@ public class ClientController implements Initializable {
         lblimg5.setText(img5);
         lblimg6.setText(img6);
     }
+
+    public void mouseEnterAnim(MouseEvent event) {
+    }
+
 
 }
