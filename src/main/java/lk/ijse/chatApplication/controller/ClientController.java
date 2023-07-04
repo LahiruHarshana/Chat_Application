@@ -1,6 +1,7 @@
 package lk.ijse.chatApplication.controller;
 
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
@@ -8,10 +9,13 @@ import javafx.scene.layout.VBox;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
+import java.net.URL;
 import java.nio.charset.Charset;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.ResourceBundle;
 
-public class ClientController {
+public class ClientController implements Initializable {
     @FXML
     private Label lblClientName;
     @FXML
@@ -55,4 +59,17 @@ public class ClientController {
     private final String img4 = new String(emojiByteCode3, Charset.forName("UTF-8"));
     private final String img5 = new String(emojiByteCode4, Charset.forName("UTF-8"));
     private final String img6 = new String(emojiByteCode5, Charset.forName("UTF-8"));
+
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        setImoji();
+        lblClientName.setText(HomeFormController.name);
+        clientName = lblClientName.getText();
+        fileList=new ArrayList<>();
+        fileList.add("*.jpg");
+        fileList.add("*.doc");
+        fileList.add("*.png");
+        fileList.add("*.pdf");
+    }
 }
