@@ -371,6 +371,24 @@ public class ClientController implements Initializable {
     }
 
     public void mouseClickOnAction() {
+        if (txtMessage.getText().equals("finish")){
+            try {
+                outputStream.writeUTF(txtMessage.getText());
+                outputStream.flush();
+                Stage stage = (Stage) btnSend.getScene().getWindow();
+                stage.close();
+                return;
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        try {
+            outputStream.writeUTF(clientName+" :"+txtMessage.getText());
+            outputStream.flush();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        txtMessage.clear();
     }
 
 
