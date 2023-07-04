@@ -85,4 +85,7 @@ public class HomeFormController implements Initializable {
             icon.setEffect(glow);
         }
     }
+
+    public void mouseExitAnim(MouseEvent event) {
+    }
 }
