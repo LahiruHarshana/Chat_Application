@@ -349,6 +349,9 @@ public class ClientController implements Initializable {
         }
 
     }
+    public void mouseExitAnim(MouseEvent event) {
+
+    }
 
 
 }
